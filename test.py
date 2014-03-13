@@ -24,7 +24,6 @@ table = dinnerTable(myDinnerTable)
 # print table.checkConditions()
 # print ""
 # table.toString()
-print table.isSame(table)
 
 validTables = []
 
@@ -61,7 +60,7 @@ def generateValidTables():
         allPermsDict[i] = allts
 
     #for i in range(5):
-    # I AM ONLY CREATING 120 TABLES. I NEED TO BE MAKING 600?
+    # I AM ONLY CREATING 120 TABLES. I NEED TO BE MAKING 600 -- Involves changing the way i create tables at pIndex
     for pIndex in range(numPerms):
         table = []
         for i in range(5): #

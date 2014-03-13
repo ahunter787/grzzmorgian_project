@@ -128,13 +128,6 @@ class dinnerTable:
             person.toString()
 
 
-    def isSame(self, anotherTable):
-        sameVal = True
-        for index in range(len(self.arrangement)-1):
-            if not self.arrangement[index].isSame(anotherTable[index]):
-                sameVal = False
-        return sameVal
 
-136 + 84 + 42
 
 
