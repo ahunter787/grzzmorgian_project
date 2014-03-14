@@ -1,9 +1,12 @@
 from dinnerTable import *
 from itertools import *
 from collections import defaultdict
+from time import *
 
 
 def generateValidTables():
+    start_time = time()
+    print "Begin iterations"
     validTables = []
     genders = ["m", "f", "r", "q", "s"]
     sashes = ["purple", "orange", "scarlet", "black", "blue"]
@@ -29,15 +32,19 @@ def generateValidTables():
                             #tableM[4][col] = drinks[baseSetPerms[dIndex][col]]
                             table.append(Individual(genders[baseSetPerms[gIndex][col]], sashes[baseSetPerms[sIndex][col]], emblems[baseSetPerms[eIndex][col]], flowers[baseSetPerms[fIndex][col]], drinks[baseSetPerms[dIndex][col]]))
                         dt = dinnerTable(table)
+                        #dt.toString()
                         dt.checkConditions(False)
                         if dt.errors < 1:
                             validTables.append(dt)
-                            print "found one!"
-            print "running"
+                            print "found one! (Now " + str(len(validTables)) + ")"
+            print "running (" + str(len(validTables)) + ")"
 
     for each_table in validTables:
         each_table.toString()
+    end_time = time()
+    print "End iterations. Runtime: " + str((end_time-begin_time)/100) + " sec"
 
 
 
 generateValidTables()
+
